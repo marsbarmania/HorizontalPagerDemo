@@ -1,26 +1,166 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ksT-y7-yYb">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--CollectionView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HorizontalPagerDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rXd-cm-83q">
+                                <rect key="frame" x="0.0" y="124" width="320" height="320"/>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="pyr-6G-pDO">
+                                    <size key="itemSize" width="300" height="300"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DataViewCell" id="gNu-vx-sxu" customClass="DataViewCell" customModule="HorizontalPagerDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-14.5" width="300" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1sC-fV-81O">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="1sC-fV-81O" firstAttribute="centerX" secondItem="gNu-vx-sxu" secondAttribute="centerX" id="N2J-mO-jJS"/>
+                                            <constraint firstItem="1sC-fV-81O" firstAttribute="width" secondItem="gNu-vx-sxu" secondAttribute="width" id="hfy-pm-k2B"/>
+                                            <constraint firstItem="1sC-fV-81O" firstAttribute="height" secondItem="gNu-vx-sxu" secondAttribute="height" id="jiC-tM-AFh"/>
+                                            <constraint firstItem="1sC-fV-81O" firstAttribute="centerY" secondItem="gNu-vx-sxu" secondAttribute="centerY" id="lla-nk-xst"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="itemImageView" destination="1sC-fV-81O" id="ssR-f4-moj"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="uqU-nx-can"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xgl-qV-F5u"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page Number" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34h-iV-vLc">
+                                <rect key="frame" x="124" y="50" width="72" height="14"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                                <color key="textColor" red="0.86540365220000004" green="0.0" blue="0.0110183442" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJh-cb-Lh5">
+                                <rect key="frame" x="133" y="67" width="54" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="jEF-ad-81C">
+                                <rect key="frame" x="141" y="437" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.18280251471136366" green="0.51516208014235643" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rXd-cm-83q" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="width" id="BNf-xB-LNY"/>
+                            <constraint firstItem="34h-iV-vLc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="CfG-9A-9V7"/>
+                            <constraint firstItem="rXd-cm-83q" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EnX-sa-Gmt"/>
+                            <constraint firstItem="34h-iV-vLc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ju0-hT-TDj"/>
+                            <constraint firstItem="jEF-ad-81C" firstAttribute="bottom" secondItem="rXd-cm-83q" secondAttribute="bottom" constant="30" id="RO9-tz-fvN"/>
+                            <constraint firstItem="hJh-cb-Lh5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TfV-Rz-DlL"/>
+                            <constraint firstItem="rXd-cm-83q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="brC-oq-5bf"/>
+                            <constraint firstItem="hJh-cb-Lh5" firstAttribute="top" secondItem="34h-iV-vLc" secondAttribute="bottom" constant="3" id="eW6-ce-iOS"/>
+                            <constraint firstItem="rXd-cm-83q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="iIK-b4-72R"/>
+                            <constraint firstItem="jEF-ad-81C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k4x-qv-ShF"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="CollectionView" image="drumstick" id="0Xi-Bk-ySQ"/>
+                    <connections>
+                        <outlet property="collectionView" destination="rXd-cm-83q" id="aa5-ZY-cIN"/>
+                        <outlet property="currentPageLabel" destination="hJh-cb-Lh5" id="ubw-kx-EMm"/>
+                        <outlet property="pgctl" destination="jEF-ad-81C" id="ETI-cb-Edh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1134.375" y="138.38028169014083"/>
+        </scene>
+        <!--ScrollView-->
+        <scene sceneID="We2-04-CBV">
+            <objects>
+                <viewController id="XIE-qG-hOY" customClass="SwipeViewController" customModule="HorizontalPagerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lQ4-OP-SiH"/>
+                        <viewControllerLayoutGuide type="bottom" id="jdv-9j-ebc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RAV-hL-6nJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Tq-pg-OZm">
+                                <rect key="frame" x="0.0" y="142" width="320" height="284"/>
+                                <color key="backgroundColor" red="1" green="0.74189927434846958" blue="0.72227957913269192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Tq-pg-OZm" firstAttribute="height" secondItem="RAV-hL-6nJ" secondAttribute="height" multiplier="0.5" id="1fY-tE-VCc"/>
+                            <constraint firstItem="1Tq-pg-OZm" firstAttribute="leading" secondItem="RAV-hL-6nJ" secondAttribute="leading" id="GlC-lY-Uuk"/>
+                            <constraint firstItem="1Tq-pg-OZm" firstAttribute="centerY" secondItem="RAV-hL-6nJ" secondAttribute="centerY" id="ZHU-87-e4N"/>
+                            <constraint firstAttribute="trailing" secondItem="1Tq-pg-OZm" secondAttribute="trailing" id="njG-aN-g3J"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="ScrollView" image="water-bottle" id="yvf-iB-keE"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="scrollView" destination="1Tq-pg-OZm" id="DJ5-RU-jVw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lYN-eY-BYB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1132.5" y="932.74647887323943"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="MUK-Rz-Odm">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ksT-y7-yYb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Ght-Gu-XO0">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="WsG-Tc-IRM"/>
+                        <segue destination="XIE-qG-hOY" kind="relationship" relationship="viewControllers" id="f40-Mu-Ogt"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oHU-v5-N7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.875" y="138.38028169014083"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="drumstick" width="30" height="30"/>
+        <image name="water-bottle" width="30" height="30"/>
+    </resources>
 </document>

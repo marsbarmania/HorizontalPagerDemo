@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B800D611E24D1FA007BBF9B /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B800D601E24D1FA007BBF9B /* SwipeViewController.swift */; };
 		5BE80C961E14DE2400D7B92A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE80C951E14DE2400D7B92A /* AppDelegate.swift */; };
 		5BE80C981E14DE2400D7B92A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE80C971E14DE2400D7B92A /* ViewController.swift */; };
 		5BE80C9B1E14DE2400D7B92A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BE80C991E14DE2400D7B92A /* Main.storyboard */; };
@@ -14,6 +15,9 @@
 		5BE80CA01E14DE2400D7B92A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BE80C9E1E14DE2400D7B92A /* LaunchScreen.storyboard */; };
 		5BE80CAB1E14DE2400D7B92A /* HorizontalPagerDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE80CAA1E14DE2400D7B92A /* HorizontalPagerDemoTests.swift */; };
 		5BE80CB61E14DE2500D7B92A /* HorizontalPagerDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE80CB51E14DE2500D7B92A /* HorizontalPagerDemoUITests.swift */; };
+		5BE80CC41E14DE8100D7B92A /* items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BE80CC31E14DE8100D7B92A /* items.plist */; };
+		5BE80CC71E14DFAE00D7B92A /* DataViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE80CC51E14DFAE00D7B92A /* DataViewCell.swift */; };
+		5BE80CC81E14DFAE00D7B92A /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE80CC61E14DFAE00D7B92A /* GalleryItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B800D601E24D1FA007BBF9B /* SwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		5BE80C921E14DE2400D7B92A /* HorizontalPagerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HorizontalPagerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BE80C951E14DE2400D7B92A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BE80C971E14DE2400D7B92A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,9 @@
 		5BE80CB11E14DE2500D7B92A /* HorizontalPagerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HorizontalPagerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BE80CB51E14DE2500D7B92A /* HorizontalPagerDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalPagerDemoUITests.swift; sourceTree = "<group>"; };
 		5BE80CB71E14DE2500D7B92A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BE80CC31E14DE8100D7B92A /* items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = items.plist; sourceTree = "<group>"; };
+		5BE80CC51E14DFAE00D7B92A /* DataViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewCell.swift; sourceTree = "<group>"; };
+		5BE80CC61E14DFAE00D7B92A /* GalleryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +105,16 @@
 		5BE80C941E14DE2400D7B92A /* HorizontalPagerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				5BE80C951E14DE2400D7B92A /* AppDelegate.swift */,
+				5BE80CC51E14DFAE00D7B92A /* DataViewCell.swift */,
+				5BE80CC61E14DFAE00D7B92A /* GalleryItem.swift */,
 				5BE80C971E14DE2400D7B92A /* ViewController.swift */,
 				5BE80C991E14DE2400D7B92A /* Main.storyboard */,
+				5BE80C951E14DE2400D7B92A /* AppDelegate.swift */,
 				5BE80C9C1E14DE2400D7B92A /* Assets.xcassets */,
 				5BE80C9E1E14DE2400D7B92A /* LaunchScreen.storyboard */,
 				5BE80CA11E14DE2400D7B92A /* Info.plist */,
+				5BE80CC31E14DE8100D7B92A /* items.plist */,
+				5B800D601E24D1FA007BBF9B /* SwipeViewController.swift */,
 			);
 			path = HorizontalPagerDemo;
 			sourceTree = "<group>";
@@ -238,6 +250,7 @@
 				5BE80CA01E14DE2400D7B92A /* LaunchScreen.storyboard in Resources */,
 				5BE80C9D1E14DE2400D7B92A /* Assets.xcassets in Resources */,
 				5BE80C9B1E14DE2400D7B92A /* Main.storyboard in Resources */,
+				5BE80CC41E14DE8100D7B92A /* items.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B800D611E24D1FA007BBF9B /* SwipeViewController.swift in Sources */,
+				5BE80CC71E14DFAE00D7B92A /* DataViewCell.swift in Sources */,
+				5BE80CC81E14DFAE00D7B92A /* GalleryItem.swift in Sources */,
 				5BE80C981E14DE2400D7B92A /* ViewController.swift in Sources */,
 				5BE80C961E14DE2400D7B92A /* AppDelegate.swift in Sources */,
 			);
@@ -512,6 +528,7 @@
 				5BE80CBC1E14DE2500D7B92A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5BE80CBD1E14DE2500D7B92A /* Build configuration list for PBXNativeTarget "HorizontalPagerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +537,7 @@
 				5BE80CBF1E14DE2500D7B92A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5BE80CC01E14DE2500D7B92A /* Build configuration list for PBXNativeTarget "HorizontalPagerDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +546,7 @@
 				5BE80CC21E14DE2500D7B92A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
