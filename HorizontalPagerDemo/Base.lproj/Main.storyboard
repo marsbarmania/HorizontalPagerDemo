@@ -34,7 +34,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DataViewCell" id="gNu-vx-sxu" customClass="DataViewCell" customModule="HorizontalPagerDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-14.5" width="300" height="300"/>
+                                        <rect key="frame" x="0.0" y="-15" width="300" height="300"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
@@ -116,22 +116,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Tq-pg-OZm">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Tq-pg-OZm">
                                 <rect key="frame" x="0.0" y="142" width="320" height="284"/>
-                                <color key="backgroundColor" red="1" green="0.74189927434846958" blue="0.72227957913269192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="XIE-qG-hOY" id="vQ0-tA-frM"/>
+                                </connections>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="s4e-cG-LRr">
+                                <rect key="frame" x="141" y="458" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" red="0.1828025147" green="0.51516208009999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1Tq-pg-OZm" firstAttribute="height" secondItem="RAV-hL-6nJ" secondAttribute="height" multiplier="0.5" id="1fY-tE-VCc"/>
                             <constraint firstItem="1Tq-pg-OZm" firstAttribute="leading" secondItem="RAV-hL-6nJ" secondAttribute="leading" id="GlC-lY-Uuk"/>
+                            <constraint firstItem="jdv-9j-ebc" firstAttribute="top" secondItem="s4e-cG-LRr" secondAttribute="bottom" constant="24" id="Q4P-38-g57"/>
                             <constraint firstItem="1Tq-pg-OZm" firstAttribute="centerY" secondItem="RAV-hL-6nJ" secondAttribute="centerY" id="ZHU-87-e4N"/>
+                            <constraint firstItem="s4e-cG-LRr" firstAttribute="centerX" secondItem="RAV-hL-6nJ" secondAttribute="centerX" id="nd1-QU-mEw"/>
                             <constraint firstAttribute="trailing" secondItem="1Tq-pg-OZm" secondAttribute="trailing" id="njG-aN-g3J"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="ScrollView" image="water-bottle" id="yvf-iB-keE"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="pageCont" destination="s4e-cG-LRr" id="If6-1x-Eua"/>
                         <outlet property="scrollView" destination="1Tq-pg-OZm" id="DJ5-RU-jVw"/>
                     </connections>
                 </viewController>
